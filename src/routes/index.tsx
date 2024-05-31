@@ -1,5 +1,5 @@
 
-import { useRoutes } from 'react-router-dom';
+import { Navigate, useRoutes } from 'react-router-dom';
 
 
 import { publicRoutes } from './public';
@@ -13,6 +13,7 @@ function AppRoutes() {
 
   const commonRoutes = [
     { path: '/', element: <div>landing page</div> },
+    { path: '*', element: <Navigate to="/" replace/> },
   ];
 
   // TODO:
