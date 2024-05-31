@@ -40,4 +40,4 @@ yarn dev
 
 .env.example contains an example of the required variables needed to run the project
 
-.env-local the local dev environment file
+.env.local the local dev environment file
