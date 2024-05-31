@@ -4,6 +4,7 @@ import React from "react";
 import { ErrorBoundary } from "react-error-boundary"
 import { BrowserRouter } from 'react-router-dom';
 
+// TODO: move to components folder
 const ErrorFallback = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const ErrorFallback = () => {
   );
 };
 
+// TODO: move to components folder
 const LoadingFallback = () => {
   return (
     <div>

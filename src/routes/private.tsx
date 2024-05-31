@@ -10,9 +10,6 @@ const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
 
 
 const App = () => {
-
-
-
   return (
     <div>
       <h3>App layout</h3>
