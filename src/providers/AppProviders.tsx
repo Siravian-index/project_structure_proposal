@@ -1,4 +1,6 @@
+import { msalInstance } from "@/lib/auth";
 import { queryClient } from "@/lib/react-query";
+import { MsalProvider } from "@azure/msal-react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary"
@@ -30,11 +32,13 @@ function AppProviders({ children }: { children: React.ReactNode }) {
   return (
     <React.Suspense fallback={<LoadingFallback />}>
       <ErrorBoundary fallback={<ErrorFallback />}>
-        <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
+        <MsalProvider instance={msalInstance}>
+          <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
               {children}
-          </BrowserRouter>
-        </QueryClientProvider>
+            </BrowserRouter>
+          </QueryClientProvider>
+        </MsalProvider>
       </ErrorBoundary>
     </React.Suspense>
   )

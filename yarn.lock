@@ -15,6 +15,23 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
+"@azure/msal-browser@^3.16.0":
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/@azure/msal-browser/-/msal-browser-3.16.0.tgz#f1e2dc957006783b29816273d531761116215a33"
+  integrity sha512-WKobvIisBK7sFSOwHuchH9tUMekwhJRLgLE9tKhIq0wFYGRcVGK0KivP5vZrobVZEMNCZWto0fI1VcSVoa+cig==
+  dependencies:
+    "@azure/msal-common" "14.11.0"
+
+"@azure/msal-common@14.11.0":
+  version "14.11.0"
+  resolved "https://registry.yarnpkg.com/@azure/msal-common/-/msal-common-14.11.0.tgz#a34483ae6b1009d0058472f2c5db4569071dc51a"
+  integrity sha512-B6+IKLFs7Lsr06vjX8dPN61ENpTgiFrHf+CVo1UasHcmk5uEOq5D4thrbjsauKX+xtFryYsCDtznVDmWS4/sCg==
+
+"@azure/msal-react@^2.0.18":
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/@azure/msal-react/-/msal-react-2.0.18.tgz#c9805b7a1f749ee2d39c3ec91af32a76a9e8f2b9"
+  integrity sha512-FNGPtmYg31tLBIYjp3i1LVUD+QG7wsT1a+CS4IXcc41Dw5HFQmEFYcozqUM5vH45V7JeIRbzsEk3VSkNtIFwrg==
+
 "@babel/code-frame@^7.23.5", "@babel/code-frame@^7.24.1", "@babel/code-frame@^7.24.2":
   version "7.24.2"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.24.2.tgz#718b4b19841809a58b29b68cde80bc5e1aa6d9ae"
