@@ -1,3 +1,4 @@
+import { msalInstance } from "@/lib/auth"
 
 
 interface Props {
@@ -7,14 +8,14 @@ interface Props {
 function LoginForm({ onSuccess }: Props) {
 
 
-  async function loginNow() {
-
+  async function loginAzure() {
+    msalInstance.loginPopup()
   }
 
   return (
     <>
       <h3>LoginForm form</h3>
-      <button onClick={loginNow}>Login</button>
+      <button onClick={loginAzure}>Login with azure</button>
     </>
   )
 }

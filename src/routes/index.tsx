@@ -19,9 +19,9 @@ function AppRoutes() {
   // TODO:
   // Based on current user status load public or private routes
   // const routes = user.data ? protectedRoutes : publicRoutes;
-  const routes = publicRoutes;
+  // const routes = publicRoutes;
 
-  const element = useRoutes([...routes, ...commonRoutes]);
+  const element = useRoutes([...publicRoutes, ...protectedRoutes, ...commonRoutes]);
 
   return <>{element}</>;
 }
