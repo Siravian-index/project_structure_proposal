@@ -2,10 +2,9 @@ import { msalInstance } from "@/lib/auth"
 
 
 interface Props {
-  onSuccess: () => void
 }
 
-function LoginForm({ onSuccess }: Props) {
+function LoginForm({ }: Props) {
 
 
   async function loginAzure() {
