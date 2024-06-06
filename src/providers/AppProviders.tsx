@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary"
 import { BrowserRouter } from 'react-router-dom';
+import { MantineProviders } from "./MantineProviders";
 
 // TODO: move to components folder
 const ErrorFallback = () => {
@@ -35,7 +36,9 @@ function AppProviders({ children }: { children: React.ReactNode }) {
         <MsalProvider instance={msalInstance}>
           <QueryClientProvider client={queryClient}>
             <BrowserRouter>
-              {children}
+              <MantineProviders>
+                {children}
+              </MantineProviders>
             </BrowserRouter>
           </QueryClientProvider>
         </MsalProvider>
