@@ -1,5 +1,5 @@
 import { SaveButton } from "@/components";
-import { Table, Text } from "@mantine/core";
+import { Flex, Table, Text } from "@mantine/core";
 
 
 export function Dashboard() {
@@ -20,8 +20,17 @@ export function Dashboard() {
   ));
   return (
     <>
-      <Text>Dashboard Page</Text>
-      <SaveButton >Guardar</SaveButton>
+      <Flex
+        mih={50}
+        gap="md"
+        justify="space-between"
+        align="center"
+        direction="row"
+        wrap="wrap"
+      >
+        <Text size="xl">Dashboard Page</Text>
+        <SaveButton >Guardar</SaveButton>
+      </Flex>
       <Table>
         <Table.Thead>
           <Table.Tr>

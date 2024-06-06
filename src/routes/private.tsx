@@ -13,7 +13,7 @@ const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
 const App = () => {
 
   return (
-    <Shell header='Filtrar casos duplicados'>
+    <Shell>
       <Suspense
         fallback={
           <Center>

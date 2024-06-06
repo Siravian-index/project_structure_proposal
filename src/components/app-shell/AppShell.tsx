@@ -1,34 +1,25 @@
 
-import { AppShell, Burger, Group, Skeleton, Text } from '@mantine/core';
+import { AppShell, Box, Burger, Group, Skeleton, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import styles from "./styles.module.css"
 interface Props {
     children: React.ReactNode
-    header: string
 }
 
 
-export function Shell({ children, header }: Props) {
-    const [opened, { toggle }] = useDisclosure();
-
+export function Shell({ children }: Props) {
+    const [opened, { toggle }] = useDisclosure(true);
     return (
         <AppShell
             layout="alt"
-            header={{ height: 60, collapsed: false }}
-            navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+            navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: !opened, mobile: !opened }, }}
             padding="lg"
             withBorder={true}
         >
-            <AppShell.Header withBorder={false}>
-                <Group h="100%" px="md">
-                    <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-                    <Text>{header}</Text>
-                </Group>
-            </AppShell.Header>
             <AppShell.Navbar p="md" classNames={{ navbar: styles.navbar }}>
                 <Group>
-                    <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+                    <Burger opened={opened} onClick={toggle} size="sm" color='white' />
                     <Text classNames={{ root: styles["navbar-text"] }}>Navbar</Text>
                 </Group>
                 {Array(3)
@@ -39,6 +30,9 @@ export function Shell({ children, header }: Props) {
             </AppShell.Navbar>
 
             <AppShell.Main>
+                {!opened &&
+                    <Burger opened={opened} onClick={toggle} size="sm" />
+                }
                 {children}
             </AppShell.Main>
         </AppShell>
