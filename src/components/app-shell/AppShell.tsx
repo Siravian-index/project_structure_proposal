@@ -5,10 +5,11 @@ import { useDisclosure } from '@mantine/hooks';
 import styles from "./styles.module.css"
 interface Props {
     children: React.ReactNode
+    navLinks: React.ReactNode
 }
 
 
-export function Shell({ children }: Props) {
+export function Shell({ children, navLinks }: Props) {
     const [opened, { toggle }] = useDisclosure(true);
     return (
         <AppShell
@@ -18,15 +19,13 @@ export function Shell({ children }: Props) {
             withBorder={true}
         >
             <AppShell.Navbar p="md" classNames={{ navbar: styles.navbar }}>
-                <Group>
-                    <Burger opened={opened} onClick={toggle} size="sm" color='white' />
+                <Group
+                    justify="space-between"
+                >
                     <Text classNames={{ root: styles["navbar-text"] }}>Navbar</Text>
+                    <Burger opened={opened} onClick={toggle} size="sm" color='white' />
                 </Group>
-                {Array(3)
-                    .fill(0)
-                    .map((_, index) => (
-                        <Skeleton key={index} h={28} mt="sm" animate={false} />
-                    ))}
+                {navLinks}
             </AppShell.Navbar>
 
             <AppShell.Main>
