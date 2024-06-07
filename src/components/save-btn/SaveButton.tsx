@@ -9,7 +9,7 @@ interface Props extends React.ComponentPropsWithoutRef<"button"> {
     loading?: boolean
 }
 
-const MOBILE_VIEWPORT = 400
+const MOBILE_VIEWPORT = 420
 
 export function SaveButton({ props, loading, ...defaultBtnProps }: Props) {
     const { width } = useViewportSize();

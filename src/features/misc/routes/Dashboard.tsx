@@ -1,30 +1,29 @@
 import { CustomTable, SaveButton, TextInput } from "@/components";
-import { ActionIcon, Button, Card, Flex, Table, Text } from "@mantine/core";
+import { ActionIcon, Card, Group, Table, Title } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconFilter, IconSearch } from "@tabler/icons-react";
 
 
 export function Dashboard() {
   const [opened, { toggle }] = useDisclosure(false);
+  const titles = ["Nombre", "Cedula", "Finanzas", "Contacto", "Correo"]
 
   return (
     <>
-      <Flex
-        mih={50}
-        gap="md"
+      <Group
         justify="space-between"
         align="center"
-        direction="row"
         wrap="wrap"
-        mb="sm"
+        mb="lg"
+        mt="xs"
       >
-        <Text size="xl">Dashboard Page</Text>
+        <Title order={1} size="h4">Filtrar casos duplicados</Title>
         <SaveButton >Guardar</SaveButton>
-      </Flex>
+      </Group>
 
       {opened ?
         <Card shadow="sm" radius="md" mb="lg">
-          <Flex
+          <Group
             align="center"
             gap="sm"
           >
@@ -36,7 +35,7 @@ export function Dashboard() {
             <ActionIcon variant="default" radius="xl" aria-label="Settings">
               <IconFilter style={{ width: '70%', height: '70%' }} stroke={1.5} />
             </ActionIcon>
-          </Flex>
+          </Group>
         </Card>
         :
         <ActionIcon variant="transparent" color="#4B4F63" aria-label="Settings">
@@ -46,10 +45,28 @@ export function Dashboard() {
         </ActionIcon>
       }
 
-      <Card shadow="sm" radius="md">
+      <Card shadow="sm" radius="md" mb="lg">
         <Table.ScrollContainer minWidth={600} >
           <CustomTable />
         </Table.ScrollContainer >
+      </Card>
+
+      <Card shadow="sm" radius="md" mb="lg">
+        <Title order={4} size="h5">Datos del cliente</Title>
+
+        {titles.map((title) => (
+
+          <Group
+            align="center"
+            gap="sm"
+          >
+            <TextInput
+              label={title}
+              disabled
+            />
+          </Group>
+        ))}
+
       </Card>
     </>
   )
