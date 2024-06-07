@@ -13,7 +13,7 @@ export function Shell({ children }: Props) {
     return (
         <AppShell
             layout="alt"
-            navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: !opened, mobile: !opened }, }}
+            navbar={{ width: 300, breakpoint: 'xs', collapsed: { desktop: !opened, mobile: !opened }, }}
             padding="lg"
             withBorder={true}
         >

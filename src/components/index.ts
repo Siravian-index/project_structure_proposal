@@ -1,7 +1,9 @@
 import { Shell } from "./app-shell/AppShell";
 import { SaveButton } from "./save-btn/SaveButton";
 
+import { CustomTable } from "./table/Table";
 export {
     Shell,
     SaveButton,
+    CustomTable,
 }
