@@ -1,16 +1,16 @@
 
 import styles from "./styles.module.css"
 
-import { Table, TableData } from "@mantine/core"
+import { Avatar, Card, Checkbox, Flex, Table } from "@mantine/core"
 
 export function CustomTable() {
-    const titles = ['Element position', 'Element name', 'Symbol', 'Atomic mass']
+    const titles = ["Nombre", "Cedula", "Finanzas", "Contacto", "Correo"]
+    // The idea is that each prop is and obj with value and node props to find the owner
     const elements = [
-        { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
-        { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },
-        { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },
-        { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },
-        { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
+        { name: "Juan Carlos", cc: "11232132", finances: "$25.000.000", contact: "3128574632", email: "jc@gmail.com" },
+        { name: "Jhoan Carlos", cc: "11232132", finances: "$25.000.000", contact: "3128574632", email: "jc@gmail.com" },
+        { name: "Juan Carlitos", cc: "11232132", finances: "$25.000.000", contact: "3128574632", email: "jc@gmail.com" },
+        { name: "Juan karlos", cc: "11232132", finances: "$25.000.000", contact: "3128574632", email: "jc@gmail.com" },
     ];
 
     const headers = titles.map((element) => (
@@ -19,27 +19,43 @@ export function CustomTable() {
     // TODO: make it so it can take any array of obj an return rows regardless the key name
     // TODO load both the parent name and the value on the onClick
     // This will enter as prop
-    const rows = elements.map((element) => (
-        <Table.Tr classNames={{ tr: styles.tr }} key={element.name}>
-            <Table.Td classNames={{ td: styles.td }}>{element.position}</Table.Td>
-            <Table.Td classNames={{ td: styles.td }}>{element.name}</Table.Td>
-            <Table.Td classNames={{ td: styles.td }}>{element.symbol}</Table.Td>
-            <Table.Td classNames={{ td: styles.td }}>{element.mass}</Table.Td>
+    const rows = elements.map((element, index) => (
+        <Table.Tr classNames={{ tr: styles.tr }} key={index}>
+            <Table.Td>
+                <Checkbox
+
+                />
+            </Table.Td>
+            <Table.Td classNames={{ td: styles.td }}>
+                <Flex
+                    align="center"
+                    gap="xs"
+                >
+
+                    <Avatar radius="xl">JC</Avatar>
+                    {element.name}
+                </Flex>
+            </Table.Td>
+            <Table.Td classNames={{ td: styles.td }}>{element.cc}</Table.Td>
+            <Table.Td classNames={{ td: styles.td }}>{element.finances}</Table.Td>
+            <Table.Td classNames={{ td: styles.td }}>{element.contact}</Table.Td>
+            <Table.Td classNames={{ td: styles.td }}>{element.email}</Table.Td>
         </Table.Tr>
     ));
 
 
     return (
-        <Table.ScrollContainer minWidth={500}>
-            <Table classNames={{ table: styles.table }}>
-                <Table.Thead classNames={{ thead: styles.thead }}>
-                    <Table.Tr classNames={{ tr: styles.tr }}>
-                        {headers}
-                    </Table.Tr>
-                </Table.Thead>
-                <Table.Tbody classNames={{ tbody: styles.tbody }}>{rows}</Table.Tbody>
-            </Table>
-        </Table.ScrollContainer>
+        <Table classNames={{ table: styles.table }}
+            horizontalSpacing="sm" verticalSpacing="sm"
+        >
+            <Table.Thead classNames={{ thead: styles.thead }}>
+                <Table.Tr classNames={{ tr: styles.tr }}>
+                    <Table.Th />
+                    {headers}
+                </Table.Tr>
+            </Table.Thead>
+            <Table.Tbody classNames={{ tbody: styles.tbody }}>{rows}</Table.Tbody>
+        </Table>
 
     )
 }

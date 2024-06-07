@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 
 import { lazyImport } from '@/utils/lazyImport';
-import { Center, Loader, } from '@mantine/core';
+import { Center, Container, Loader, } from '@mantine/core';
 import { Shell } from '@/components';
 
 const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
@@ -21,7 +21,9 @@ const App = () => {
           </Center>
         }
       >
-        <Outlet />
+        <Container fluid>
+          <Outlet />
+        </Container>
       </Suspense>
     </Shell>
   );
