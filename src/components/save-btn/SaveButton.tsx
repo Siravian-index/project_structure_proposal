@@ -3,15 +3,20 @@ import { ActionIcon, Button, ButtonProps } from '@mantine/core';
 
 import styles from "./styles.module.css"
 import { IconPlus } from '@tabler/icons-react';
+import { useViewportSize } from '@mantine/hooks';
 interface Props extends React.ComponentPropsWithoutRef<"button"> {
     props?: ButtonProps
-    compact?: boolean
     loading?: boolean
 }
 
-export function SaveButton({ props, compact, loading, ...defaultBtnProps }: Props) {
+const MOBILE_VIEWPORT = 400
 
-    if (compact) {
+export function SaveButton({ props, loading, ...defaultBtnProps }: Props) {
+    const { width } = useViewportSize();
+    const isMobileView = width < MOBILE_VIEWPORT
+
+
+    if (isMobileView) {
         return (
             <ActionIcon
                 {...defaultBtnProps}
