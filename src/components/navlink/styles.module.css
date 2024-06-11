@@ -1,0 +1,13 @@
+.root {
+  color: var(--neutral-300);
+  border-radius: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.root:hover {
+  background-color: var(--primary-400)
+}
+
+.root[data-active="true"] {
+  background-color: var(--primary-800);
+}

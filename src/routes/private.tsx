@@ -3,16 +3,19 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 
 import { lazyImport } from '@/utils/lazyImport';
-import { Box, Center, Container, Loader, NavLink, } from '@mantine/core';
-import { Shell } from '@/components';
+import { Box, Center, Container, Loader, } from '@mantine/core';
+
+import { Shell, NavLink } from '@/components';
+
 
 const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
 
-import { IconUsers, IconFolderOpen, IconBell } from "@tabler/icons-react"
+import { IconUsers, IconFolderOpen, IconBell, IconHome } from "@tabler/icons-react"
 
 const App = () => {
   const [active, setActive] = useState(0);
   const data = [
+    { icon: IconHome, label: 'Inicio' },
     { icon: IconUsers, label: 'Buscar' },
     {
       icon: IconFolderOpen,
@@ -28,10 +31,6 @@ const App = () => {
       rightSection={item.rightSection}
       leftSection={<item.icon size="1rem" stroke={1.5} />}
       onClick={() => setActive(index)}
-      variant='filled'
-      color='#000D4F'
-      autoContrast
-
     />
   ))
 
