@@ -1,24 +1,31 @@
-
-
-
 .table {
-    /* border: 1px solid red; */
+    border-collapse: separate;
+    border-spacing: 1em;
+
 }
 
 .thead {
+    color: var(--neutral-600);
 }
 
-.tbody {
+.tbody {}
+
+.td {
+    /* border: 1px solid red; */
+
 }
 
 .tr {
+    /* border: 1px solid red; */
 
 }
 
-.th {
+.th {}
 
-}
+.td:hover {}
 
-.td {
- 
+
+.row {
+    border: 1px solid red;
+
 }

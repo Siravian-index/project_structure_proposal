@@ -54,11 +54,12 @@ export function Dashboard() {
       <Card shadow="sm" radius="md" mb="lg">
         <Title order={4} size="h5">Datos del cliente</Title>
 
-        {titles.map((title) => (
+        {titles.map((title, index) => (
 
           <Group
             align="center"
             gap="sm"
+            key={index}
           >
             <TextInput
               label={title}

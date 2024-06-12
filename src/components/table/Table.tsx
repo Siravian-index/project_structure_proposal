@@ -1,7 +1,9 @@
 
-import styles from "./styles.module.css"
+import { Avatar, Flex, Table } from "@mantine/core"
 
-import { Avatar, Card, Checkbox, Flex, Table } from "@mantine/core"
+import styles from "./styles.module.css"
+import { Checkbox } from "../checkbox/Checkbox";
+
 
 export function CustomTable() {
     const titles = ["Nombre", "Cedula", "Finanzas", "Contacto", "Correo"]
@@ -20,10 +22,9 @@ export function CustomTable() {
     // TODO load both the parent name and the value on the onClick
     // This will enter as prop
     const rows = elements.map((element, index) => (
-        <Table.Tr classNames={{ tr: styles.tr }} key={index}>
-            <Table.Td>
+        <Table.Tr classNames={{ tr: styles.tr }} key={index} className={styles.row}>
+            <Table.Td classNames={{ td: styles.td }}>
                 <Checkbox
-
                 />
             </Table.Td>
             <Table.Td classNames={{ td: styles.td }}>
@@ -40,17 +41,19 @@ export function CustomTable() {
             <Table.Td classNames={{ td: styles.td }}>{element.finances}</Table.Td>
             <Table.Td classNames={{ td: styles.td }}>{element.contact}</Table.Td>
             <Table.Td classNames={{ td: styles.td }}>{element.email}</Table.Td>
+
         </Table.Tr>
     ));
 
 
     return (
         <Table classNames={{ table: styles.table }}
-            horizontalSpacing="sm" verticalSpacing="sm"
+            horizontalSpacing="sm"
+            verticalSpacing="sm"
         >
             <Table.Thead classNames={{ thead: styles.thead }}>
                 <Table.Tr classNames={{ tr: styles.tr }}>
-                    <Table.Th />
+                    <Table.Th  classNames={{ th: styles.th }}/>
                     {headers}
                 </Table.Tr>
             </Table.Thead>

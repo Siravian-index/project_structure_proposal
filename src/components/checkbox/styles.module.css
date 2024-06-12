@@ -1,0 +1,15 @@
+.root {
+  border-color: var(--primary-500);
+}
+
+
+.input[type="checkbox"] {
+  border-color: var(--primary-500);
+  border-width: 0.125rem;
+}
+
+.input[type="checkbox"]:checked {
+  background-color: var(--primary-500);
+
+}
+
